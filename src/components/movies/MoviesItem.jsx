@@ -10,7 +10,6 @@ const MovieItem = ({ title, poster_path, id, price, bg }) => {
     JSON.parse(localStorage.getItem("cart")) || []
   );
 
-  // Wishlist qo'shish yoki o'chirish
   const handleLike = () => {
     if (wishlist.includes(id)) {
       setWishlist((prev) => prev.filter((item) => item !== id));
@@ -19,17 +18,15 @@ const MovieItem = ({ title, poster_path, id, price, bg }) => {
     }
   };
 
-  // Cartga mahsulot qo'shish
   const handleAddToCart = () => {
     const isExist = cart.find((item) => item.id === id);
     if (!isExist) {
       const newCart = [...cart, { id, title, price, poster_path }];
       setCart(newCart);
-      localStorage.setItem("cart", JSON.stringify(newCart)); // localStorage'ga saqlash
+      localStorage.setItem("cart", JSON.stringify(newCart)); 
     }
   };
 
-  // Wishlistni saqlash
   useEffect(() => {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   }, [wishlist]);

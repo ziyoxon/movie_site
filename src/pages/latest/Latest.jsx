@@ -83,6 +83,7 @@ const Latest = () => {
               borderRadius: "50%", 
               "&:hover": {
                 backgroundColor: "#ff4d4d",
+
               },
             },
           }}

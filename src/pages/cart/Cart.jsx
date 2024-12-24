@@ -11,7 +11,7 @@ const CartPage = () => {
   const handleDelete = (indexToDelete) => {
     const updatedCart = cart.filter((_, index) => index !== indexToDelete);
     setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Yangi savatni saqlab qo'yish
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   return (

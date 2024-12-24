@@ -5,6 +5,7 @@ import NotFound from "../pages/not-found/NotFound";
 import Layout from "../pages/layout/Layout";
 import Detail from "@/pages/detail/Detail";
 import CartPage from "../pages/cart/Cart";
+import Search from "../pages/search/Search";
 
 const Router = () => {
   return useRoutes([
@@ -27,6 +28,10 @@ const Router = () => {
         {
           path: "/product/:id",
           element: <Detail />,
+        },
+        {
+          path: "/search",
+          element : <Search/>
         },
         {
           path: "*",
