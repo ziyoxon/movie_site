@@ -8,6 +8,12 @@ const CartPage = () => {
     setCart(savedCart);
   }, []);
 
+  const handleDelete = (indexToDelete) => {
+    const updatedCart = cart.filter((_, index) => index !== indexToDelete);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Yangi savatni saqlab qo'yish
+  };
+
   return (
     <div className="container mx-auto py-10">
       <h2 className="text-center text-5xl font-bold mb-8">Your Cart</h2>
@@ -19,15 +25,23 @@ const CartPage = () => {
                 key={index}
                 className="flex items-center justify-between p-4 border rounded"
               >
-                <img
-                  src={`${import.meta.env.VITE_IMAGE_URL}${item.poster_path}`}
-                  alt={item.title}
-                  className="w-20 h-20 object-cover rounded"
-                />
-                <div>
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="text-gray-600">${item.price}</p>
+                <div className="flex items-center space-x-4">
+                  <img
+                    src={`${import.meta.env.VITE_IMAGE_URL}${item.poster_path}`}
+                    alt={item.title}
+                    className="w-20 h-20 object-cover rounded"
+                  />
+                  <div>
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <p className="text-gray-600">${item.price}</p>
+                  </div>
                 </div>
+                <button
+                  onClick={() => handleDelete(index)}
+                  className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                >
+                  Delete
+                </button>
               </li>
             ))}
           </ul>
@@ -46,6 +60,12 @@ const CartPage = () => {
                   />
                   <h4 className="font-semibold text-lg">{item.title}</h4>
                   <p className="text-gray-700 mt-2">${item.price}</p>
+                  <button
+                    onClick={() => handleDelete(index)}
+                    className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                  >
+                    Delete
+                  </button>
                 </div>
               ))}
             </div>
