@@ -64,8 +64,9 @@ const Latest = () => {
         setSelectedGenre={setSelectedGenre}
       />
       <Movies data={movieData} />
-      <div className="flex justify-center py-6">
+      <div className="flex justify-center    py-6">
         <Pagination
+          className=" text-white rounded-full shadow-md hover:shadow-lg transition-shadow duration-300"
           page={page}
           onChange={handleChange}
           count={
@@ -75,6 +76,16 @@ const Latest = () => {
                 : 500
               : 1
           }
+          sx={{
+            "& .MuiPaginationItem-root": {
+              color: "white",
+              backgroundColor: "red",
+              borderRadius: "50%", 
+              "&:hover": {
+                backgroundColor: "#ff4d4d",
+              },
+            },
+          }}
         />
       </div>
     </div>
