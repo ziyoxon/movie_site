@@ -130,9 +130,13 @@ const Header = () => {
           >
             {dark ? <MdLightMode className="text-[gold]" /> : <FaMoon />}
           </button>
-          <button className="bg-blue-500 text-white font-medium text-sm py-2 px-4 rounded-lg hover:bg-blue-600 w-full">
+          <button
+            onClick={() => window.location.href = "/login"}
+            className="bg-red-600 text-white font-medium text-sm py-2 px-4 rounded-lg hover:bg-red-700 w-full"
+          >
             Login
           </button>
+          
         </div>
       </nav>
     </header>

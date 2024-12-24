@@ -6,6 +6,8 @@ import Layout from "../pages/layout/Layout";
 import Detail from "@/pages/detail/Detail";
 import CartPage from "../pages/cart/Cart";
 import Search from "../pages/search/Search";
+import TicketPage from "../pages/ticket/Ticket";
+import LoginPage from "../pages/Login/Login";
 
 const Router = () => {
   return useRoutes([
@@ -31,7 +33,15 @@ const Router = () => {
         },
         {
           path: "/search",
-          element : <Search/>
+          element: <Search />,
+        },
+        {
+          path: "/login",
+          element: <LoginPage />,
+        },
+        {
+          path: "/tickets",
+          element: <TicketPage />,
         },
         {
           path: "*",
