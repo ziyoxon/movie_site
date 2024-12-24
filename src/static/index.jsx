@@ -13,8 +13,8 @@ export const HEADER_LINKS = [
         <path d="M2 4.00087C2 3.44811 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44463 22 4.00087V17.9991C22 18.5519 21.5447 19 21.0082 19H2.9918C2.44405 19 2 18.5554 2 17.9991V4.00087ZM5 20H19V22H5V20Z" />
       </svg>
     ),
-    title: "afisha",
-    url: "/afisha",
+    title: "Home",
+    url: "/",
   },
   {
     id: 2,
@@ -41,7 +41,7 @@ export const HEADER_LINKS = [
       </svg>
     ),
     title: "seans",
-    url: "/seans",
+    url: "/latest",
   },
   {
     id: 3,
@@ -62,8 +62,28 @@ export const HEADER_LINKS = [
     title: "tickets",
     url: "/tickets",
   },
+
   {
     id: 4,
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 4H3V6H4L7.6 13.59L6.25 16.04C6.09 16.32 6 16.65 6 17C6 18.1 6.9 19 8 19H19V17H8.42C8.28 17 8.19 16.89 8.23 16.76L8.58 16H17.55C18.3 16 18.96 15.58 19.3 14.97L22.88 8.49C22.96 8.34 23 8.17 23 8C23 7.45 22.55 7 22 7H7.21L6.27 4H7ZM8.16 14L9.1 12H18.55L16.55 14H8.16ZM7 22C5.9 22 5 21.1 5 20C5 18.9 5.9 18 7 18C8.1 18 9 18.9 9 20C9 21.1 8.1 22 7 22ZM17 22C15.9 22 15 21.1 15 20C15 18.9 15.9 18 17 18C18.1 18 19 18.9 19 20C19 21.1 18.1 22 17 22Z"
+          fill="#A1A1A1"
+        />
+      </svg>
+    ),
+    title: "Cart",
+    url: "/cart",
+  },
+  {
+    id: 5,
     icon: (
       <svg
         width="24"
@@ -81,4 +101,5 @@ export const HEADER_LINKS = [
     title: "search",
     url: "/search",
   },
+  
 ];

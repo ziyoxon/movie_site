@@ -23,6 +23,7 @@ const Home = () => {
 
     fetchMovies();
     window.scrollTo(0, 0);
+   
   }, []);
 
   if (isLoading) {

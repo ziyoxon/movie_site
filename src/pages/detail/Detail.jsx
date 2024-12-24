@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import { request } from "@/api";
 import Loading from "@/pages/Loading/Loading";
 
@@ -40,6 +40,12 @@ const Detail = () => {
     );
   }
 
+  const handleTicketPurchase = () => {
+    alert(
+      `"${movie.title}" uchun chiptani sotib olish imkoniyati tez orada mavjud bo'ladi!`
+    );
+  };
+
   return (
     <div className="bg-[#000000] text-white min-h-screen p-4">
       <div className="flex flex-col md:flex-row items-center gap-8">
@@ -62,6 +68,13 @@ const Detail = () => {
           <p>
             <strong>Reyting:</strong> {movie.vote_average} / 10
           </p>
+
+          <button
+            onClick={handleTicketPurchase}
+            className="mt-6 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-lg"
+          >
+            Chiptani sotib olish
+          </button>
         </div>
       </div>
     </div>

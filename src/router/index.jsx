@@ -4,6 +4,7 @@ import Latest from "@/pages/latest/Latest";
 import NotFound from "../pages/not-found/NotFound";
 import Layout from "../pages/layout/Layout";
 import Detail from "@/pages/detail/Detail";
+import CartPage from "../pages/cart/Cart";
 
 const Router = () => {
   return useRoutes([
@@ -19,7 +20,11 @@ const Router = () => {
           path: "/latest",
           element: <Latest />,
         },
-         {
+        {
+          path: "/cart",
+          element: <CartPage />,
+        },
+        {
           path: "/product/:id",
           element: <Detail />,
         },

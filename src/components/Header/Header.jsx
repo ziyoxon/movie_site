@@ -59,15 +59,11 @@ const Header = () => {
             </button>
           </div>
           <Link to="/">
-            <img
-              src={logo}
-              alt="logo"
-              className="w-[112px] h-9"
-            />
+            <img src={logo} alt="logo" className="w-[112px] h-9" />
           </Link>
         </div>
 
-        <ul className="hidden text-black dark:text-white gap-8 flex-wrap max-[720px]:hidden md:flex">
+        <ul className="hidden text-black dark:text-white gap-8 flex-wrap max-[650px]:fixed max-[650px]:bottom-0 max-[650px]:left-0   max-[720px]:hidden md:flex">
           {HEADER_LINKS.map((link) => (
             <li key={link.id} className="flex flex-col items-center">
               <NavLink
@@ -95,9 +91,23 @@ const Header = () => {
                 </NavLink>
               </li>
             ))}
-            <button className="bg-blue-500 text-white font-medium text-sm py-2 px-4 rounded-lg hover:bg-blue-600 w-full">
-              Login
-            </button>
+          </ul>
+        )}
+
+        {open && (
+          <ul className="absolute top-[80px] left-0 w-full bg-white dark:bg-black text-black dark:text-white flex flex-col gap-4 p-4 shadow-lg md:hidden">
+            {HEADER_LINKS.map((link) => (
+              <li key={link.id} className="flex flex-col items-center">
+                <NavLink
+                  to={link.url}
+                  className="flex flex-col items-center gap-1"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.icon}
+                  <p>{link.title}</p>
+                </NavLink>
+              </li>
+            ))}
           </ul>
         )}
 
@@ -119,6 +129,9 @@ const Header = () => {
             className="text-2xl text-gray-700 dark:text-white"
           >
             {dark ? <MdLightMode className="text-[gold]" /> : <FaMoon />}
+          </button>
+          <button className="bg-blue-500 text-white font-medium text-sm py-2 px-4 rounded-lg hover:bg-blue-600 w-full">
+            Login
           </button>
         </div>
       </nav>

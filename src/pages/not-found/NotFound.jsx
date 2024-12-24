@@ -4,17 +4,17 @@ import { useNavigate } from "react-router-dom";
 const NotFound = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex justify-center items-center h-screen dark:bg-gray-900 text-gray-100">
-      <div className="text-center dark:bg-gray-800 p-10 rounded-lg shadow-lg">
-        <h1 className="text-9xl text-red-500 font-bold mb-4">404</h1>
-        <p className="text-lg text-gray-400 mb-6">
-          Oops! The page you are looking for does not exist.
+    <div className="min-h-screen flex flex-col justify-center items-center bg-white text-gray-800">
+      <div className="text-center p-8 border border-gray-200 shadow-md rounded-lg max-w-md">
+        <h1 className="text-6xl font-extrabold text-blue-600 mb-4">404</h1>
+        <p className="text-lg font-medium text-gray-600 mb-6">
+          We can't find the page you're looking for.
         </p>
         <button
           onClick={() => navigate("/")}
-          className="text-white bg-red-500 hover:bg-red-600 px-6 py-3 rounded-lg text-xl transition-colors duration-300"
+          className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-          Go Back Home
+          Return to Homepage
         </button>
       </div>
     </div>
